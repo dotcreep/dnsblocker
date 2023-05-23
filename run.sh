@@ -164,6 +164,7 @@ if [[ -f "$config_file" ]]; then
       Run )  rules_file=$(grep -E '^rules_file\s*=' "$config_file" | awk -F '=' '{print $2}' | tr -d '[:space:]' | sed 's/"//g')
               if [[ "$rules_file" == "default" ]]; then
                 # run_dnscrypt
+                echo "Comming Soon"
               elif [[ "$rules_file" == "user" ]]; then
                 action
                 # run_dnscrypt
