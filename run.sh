@@ -22,8 +22,8 @@ function generate(){
     sed -i '/^#/d' dmerg.txt hmerg.txt
     sed -i '/^!/d' dmerg.txt hmerg.txt
     sed -i '/^$/d' dmerg.txt hmerg.txt
-    sed -i 's/^127\.0\.0\.1 /*./g' dmerg.txt hmerg.txt
-    sed -i 's/^0\.0\.0\.0 /*./g' dmerg.txt hmerg.txt
+    sed -i 's/^127\.0\.0\.1 /*./g' hmerg.txt
+    sed -i 's/^0\.0\.0\.0 /*./g' hmerg.txt
     cat dmerg.txt hmerg.txt > merger_domains.txt
     rm -f dmerg.txt hmerg.txt
     sort merger_domains.txt > domains.txt
@@ -37,9 +37,9 @@ function generate(){
     sed -i '/^#/d' dmerg.txt hmerg.txt
     sed -i '/^!/d' dmerg.txt hmerg.txt
     sed -i '/^$/d' dmerg.txt hmerg.txt
-    sed -i 's/^*\./*/g' dmerg.txt hmerg.txt
-    sed -i 's/^/0.0.0.0 /' dmerg.txt hmerg.txt
-    sed -i 's/^127\.0\.0\.1/0.0.0.0/g' dmerg.txt hmerg.txt
+    sed -i 's/^/0.0.0.0 /' dmerg.txt
+    sed -i 's/^0\.0\.0\.0 \*\./0\.0\.0\.0 /' dmerg.txt
+    sed -i 's/^127\.0\.0\.1/0.0.0.0/g' hmerg.txt
     cat dmerg.txt hmerg.txt > merger_hosts.txt
     rm -f dmerg.txt hmerg.txt
     sort merger_hosts.txt > hosts.txt
